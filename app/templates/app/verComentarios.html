@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+{% for comment in comentarios %}
+<div class="comment">
+    <strong class="title">Comentado por: {{ comment.usuario }}</strong>
+    <p>{{ comment.descripcion|linebreaks }}</p>
+    <div class="date">{{ comment.fecha_creacion }}</div>
+</div>
+{% empty %}
+<p>No Hay Comentarios :(</p>
+{% endfor %}
+
+
+{% endblock %}

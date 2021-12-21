@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+<br>
+<br>
+<div class="d-flex">
+  <button  class="btn btn-dark btn-sm">
+      <a class="nav-link" href="{% url 'filtro_fecha_reciente' %}" margin=10px>Filtrar por Posteos Recientes</a>
+  </button>
+&nbsp;
+  <button  class="btn btn-dark btn-sm">                           
+      <a class="nav-link" href="{% url 'filtro_fecha_viejo' %}">Filtrar por posteos Antiguos</a>
+  </button>
+&nbsp;
+</div>
+
+<div class="card-group">
+  <div class="card">
+  {% for a in post %}
+    <a href="{% url 'detallePostBlog' a.pk %}"> 
+      <img class="card-img-top" src="{{a.imagen.url}}" alt="Card image cap">
+    </a>
+
+    <div class="card-body">
+      <a href="{% url 'detallePostBlog' a.pk %}">
+        <h5 class="card-title" >{{a.titulo}}</h5>
+      </a>
+      
+      <p class="card-text">{{a.descripcion}}</p>
+      <div class="card-footer">
+        <p class="card-footer">POSTEADO: {{a.fecha_elaboracion}}</p>
+        <ul>
+          <li> <a class="nav-link active" href="{% url 'Comentario' %}">Comentar</a></li>
+          <li> <a class="nav-link active" href="{% url 'VerComentarios' a.pk %}">Ver Comentarios</a></li>
+      </ul>
+      </div>
+    </div>
+  {% empty %}
+  <p>No Hay Posteos aun :(</p>
+    
+  {% endfor %}
+</div> 
+
+{% endblock %}

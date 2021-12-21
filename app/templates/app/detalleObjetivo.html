@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+
+    <div>
+        <div class="card-group">
+            <div class="card">      
+                    <img class="card-img-top" src="{{objetivo.imagen.url}}" alt="Card image cap">      
+                <div class="card-body">
+                    <h5 class="card-title" >{{objetivo.nombre}}</h5>
+                    <p class="card-text">{{objetivo.descripcion}}</p>
+                    <div class="card-footer">
+                        <ul>
+                            <li> <a class="nav-link active" href="{% url 'ComentariosObj' %}">Comentar</a></li>
+                            <li> <a class="nav-link active" href="{% url 'VerComentariosObj' objetivo.pk %}">Ver Comentarios</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% load crispy_forms_tags %}

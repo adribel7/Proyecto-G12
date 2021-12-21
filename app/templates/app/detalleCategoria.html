@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<div class="card-group">
+  <div class="card">
+      {% for a in post %}
+    <a href="{% url 'detalleObjetivo' a.pk %}"> 
+      <img class="card-img-top" src="{{a.imagen.url}}" alt="Card image cap">
+    </a>
+
+    <div class="card-body">
+      <a href="{% url 'detalleObjetivo' a.pk %}">
+        <h5 class="card-title" >{{a.nombre}}</h5>
+      </a>
+      
+      <p class="card-text">{{a.descripcion}}</p>
+    </div>
+    
+  {% endfor %}
+</div> 
+
+{% endblock %}

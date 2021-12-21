@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+<br>
+  <h3 class="center"> Nuevo Comentario</h3>
+  <form method="post" enctype="multipart/form-data">{% csrf_token%}
+    {{form.errors}}
+    {{form | crispy}}
+    <input type="submit" name="" value="Comentar">
+  </form>
+
+    <br><br>
+
+
+
+</div>
+
+{% endblock %}

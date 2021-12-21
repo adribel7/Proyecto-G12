@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+
+
+{% for a in post %}
+<br>
+<br>
+
+<a href="{% url 'detallePostBlog' a.pk %}">
+    <img class="card-img-top" src="{{a.imagen.url}}" alt="Card image cap">
+</a>
+
+<div class="card-body">
+<a href="{% url 'detallePostBlog' a.pk %}">
+    <h5 class="card-title" >{{a.titulo}}</h5>            
+</a>
+
+<p class="card-text">{{a.descripcion}}</p>
+</div>
+<div class="card-footer">
+    <p>Categoria: {{a.categoria}} </p>
+    
+
+{% endfor %}
+
+{% endblock %}
+{% load crispy_forms_tags %}

@@ -1,0 +1,30 @@
+main{
+    width: 100%;
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+main > div{
+    width: 960px;
+    margin: 0px auto;
+}
+
+#intro1{
+    background-color:rgba(150,150,150,1);
+	-webkit-box-shadow: -18px -18px 35px -5px rgba(150,150,150,1);
+	-moz-box-shadow: -18px -18px 35px -5px rgba(150,150,150,1);
+	box-shadow: -18px -18px 35px -5px rgba(150,150,150,1);
+    border: 1px solid #ffffff;
+    margin: 50px auto;
+	padding: 20px;
+}	
+.ti3{
+    color: white;
+	text-align: center;
+}
+
+.p1{
+	color:white;
+	font-size: 18px;
+    margin: 50px;
+}

@@ -1,0 +1,4 @@
+django == 3.0
+pillow
+django-crispy-forms
+django-widget-tweaks

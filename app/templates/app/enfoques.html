@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+<br><br>
+<h2 class="center"> Los 5 Enfoques</h2>
+
+<div class="card-group">
+  <div class="card">
+
+  {% for a in categorias %}
+    <a href="{% url 'detalle' a.pk %}">
+      <img class="card-img-top" src="{{a.imagen.url}}" alt="Card image cap">
+    </a>
+
+    <div class="card-body">
+      <a href="{% url 'detalle' a.pk %}">
+        <h5 class="card-title" >{{a.nombre}}</h5> 
+      </a>
+      
+      <p class="card-text">{{a.descripcion}}</p>
+    </div>
+    
+  {% endfor %}
+</div>  
+
+  
+{% endblock %}
